@@ -2,6 +2,6 @@
 
 class_Dio Dio;
 
-void class_Dio::InitFunction(void){
+FUNC(void, DIO_CODE) class_Dio::InitFunction(void){
 }
 

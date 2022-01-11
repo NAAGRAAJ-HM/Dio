@@ -4,7 +4,7 @@
 
 class class_Dio{
    public:
-      void InitFunction(void);
+      FUNC(void, DIO_CODE) InitFunction(void);
 };
 
 extern class_Dio Dio;
