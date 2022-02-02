@@ -8,6 +8,8 @@
 /*****************************************************/
 #include "Dio.h"
 
+#include "Dio_EcuM.h"
+
 /*****************************************************/
 /* #DEFINES                                          */
 /*****************************************************/
@@ -32,11 +34,13 @@
 /* OBJECTS                                           */
 /*****************************************************/
 class_Dio Dio;
+class_Dio_EcuM Dio_EcuM;
+class_Dio_EcuM *Dio_EcuM_ptr = &Dio_EcuM;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, DIO_CODE) class_Dio::InitFunction(void){
+FUNC(void, DIO_CODE) class_Dio_EcuM::InitFunction(void){
 }
 
 FUNC(void, DIO_CODE) class_Dio::ReadChannel(void){
