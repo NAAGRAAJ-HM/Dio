@@ -33,9 +33,9 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_Dio Dio;
 class_Dio_EcuM Dio_EcuM;
-class_Dio_EcuM *Dio_EcuM_ptr = &Dio_EcuM;
+class_EcuM_Client *EcuM_Client_ptr_Dio = &Dio_EcuM;
+class_Dio Dio;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
