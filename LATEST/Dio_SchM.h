@@ -1,14 +1,15 @@
 #pragma once
 /*****************************************************/
-/* File   : Dio.h                                    */
+/* File   : Dio_SchM.h                               */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "Std_Types.h"
 #include "Compiler_Cfg_Dio.h"
+
+#include "SchM_Client.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -21,19 +22,12 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class class_Dio{
+class interface_Dio_SchM : public interface_SchM_Client{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, DIO_CODE) ReadChannel       (void);
-      FUNC(void, DIO_CODE) WriteChannel      (void);
-      FUNC(void, DIO_CODE) ReadPort          (void);
-      FUNC(void, DIO_CODE) WritePort         (void);
-      FUNC(void, DIO_CODE) ReadChannelGroup  (void);
-      FUNC(void, DIO_CODE) WriteChannelGroup (void);
-      FUNC(void, DIO_CODE) GetVersionInfo    (void);
-      FUNC(void, DIO_CODE) FlipChannel       (void);
+      FUNC(void, DIO_CODE) MainFunction(void);
 };
 
 /*****************************************************/
@@ -47,7 +41,7 @@ class class_Dio{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern class_Dio Dio;
+extern interface_Dio_SchM *SchM_Client_ptr_Dio;
 
 /*****************************************************/
 /* EOF                                               */

@@ -1,15 +1,14 @@
 #pragma once
 /*****************************************************/
-/* File   : Dio_EcuM.h                               */
+/* File   : Dio_Unused.h                             */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
+#include "Std_Types.h"
 #include "Compiler_Cfg_Dio.h"
-
-#include "EcuM_Client.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -22,13 +21,19 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class interface_Dio_EcuM : public interface_EcuM_Client{
+class class_Dio_Unused{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, DIO_CODE) InitFunction   (void);
-      FUNC(void, DIO_CODE) DeInitFunction (void);
+      FUNC(void, DIO_CODE) ReadChannel       (void);
+      FUNC(void, DIO_CODE) WriteChannel      (void);
+      FUNC(void, DIO_CODE) ReadPort          (void);
+      FUNC(void, DIO_CODE) WritePort         (void);
+      FUNC(void, DIO_CODE) ReadChannelGroup  (void);
+      FUNC(void, DIO_CODE) WriteChannelGroup (void);
+      FUNC(void, DIO_CODE) GetVersionInfo    (void);
+      FUNC(void, DIO_CODE) FlipChannel       (void);
 };
 
 /*****************************************************/
@@ -42,7 +47,7 @@ class interface_Dio_EcuM : public interface_EcuM_Client{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_Dio_EcuM *EcuM_Client_ptr_Dio;
+//extern class_Dio Dio;
 
 /*****************************************************/
 /* EOF                                               */
