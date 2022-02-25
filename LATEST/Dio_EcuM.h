@@ -27,8 +27,8 @@ class interface_Dio_EcuM : public interface_EcuM_Client{
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, DIO_CODE) InitFunction   (void);
-      FUNC(void, DIO_CODE) DeInitFunction (void);
+      virtual FUNC(void, DIO_CODE) InitFunction   (void) = 0;
+      virtual FUNC(void, DIO_CODE) DeInitFunction (void) = 0;
 };
 
 /*****************************************************/
