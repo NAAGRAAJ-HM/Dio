@@ -24,8 +24,6 @@
 /*****************************************************/
 class module_Dio:
       public abstract_module
-   ,  public interface_Dio_EcuM
-   ,  public interface_Dio_SchM
 {
    public:
       FUNC(void, DIO_CODE) InitFunction   (void);
@@ -44,10 +42,9 @@ class module_Dio:
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_Dio Dio;
-
-interface_Dio_EcuM *EcuM_Client_ptr_Dio = &Dio;
-interface_Dio_SchM *SchM_Client_ptr_Dio = &Dio;
+module_Dio     Dio;
+infEcuMClient* gptrinfEcuMClient_Dio = &Dio;
+infSchMClient* gptrinfSchMClient_Dio = &Dio;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
