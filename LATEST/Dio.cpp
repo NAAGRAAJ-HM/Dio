@@ -7,8 +7,8 @@
 /* #INCLUDES                                         */
 /*****************************************************/
 #include "module.h"
-#include "Dio_EcuM.h"
-#include "Dio_SchM.h"
+#include "infDio_EcuM.h"
+#include "infDio_SchM.h"
 #include "Dio_Unused.h"
 
 /*****************************************************/
@@ -28,6 +28,7 @@ class module_Dio:
    public:
       FUNC(void, DIO_CODE) InitFunction   (void);
       FUNC(void, DIO_CODE) DeInitFunction (void);
+      FUNC(void, DIO_CODE) GetVersionInfo (void);
       FUNC(void, DIO_CODE) MainFunction   (void);
 };
 
@@ -44,6 +45,7 @@ class module_Dio:
 /*****************************************************/
 module_Dio     Dio;
 infEcuMClient* gptrinfEcuMClient_Dio = &Dio;
+infDcmClient*  gptrinfDcmClient_Dio  = &Dio;
 infSchMClient* gptrinfSchMClient_Dio = &Dio;
 
 /*****************************************************/
@@ -53,6 +55,9 @@ FUNC(void, DIO_CODE) module_Dio::InitFunction(void){
 }
 
 FUNC(void, DIO_CODE) module_Dio::DeInitFunction(void){
+}
+
+FUNC(void, DIO_CODE) module_Dio::GetVersionInfo(void){
 }
 
 FUNC(void, DIO_CODE) module_Dio::MainFunction(void){
