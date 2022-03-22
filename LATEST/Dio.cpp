@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "infDio_Version.h"
+#include "Dio_Cfg.h"
 #include "infDio_EcuM.h"
 #include "infDio_Dcm.h"
 #include "infDio_SchM.h"
@@ -15,10 +15,19 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define DIO_AR_RELEASE_MAJOR_VERSION                                           4
+#define DIO_AR_RELEASE_MINOR_VERSION                                           3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
+#if(DIO_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
+   #error "Incompatible DIO_AR_RELEASE_MAJOR_VERSION!"
+#endif
+
+#if(DIO_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
+   #error "Incompatible DIO_AR_RELEASE_MINOR_VERSION!"
+#endif
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
@@ -61,6 +70,11 @@ FUNC(void, DIO_CODE) module_Dio::DeInitFunction(void){
 }
 
 FUNC(void, DIO_CODE) module_Dio::GetVersionInfo(void){
+#if(STD_ON == Dio_DevErrorDetect)
+//TBD: API parameter check
+   Det_ReportError(
+   );
+#endif
 }
 
 FUNC(void, DIO_CODE) module_Dio::MainFunction(void){
