@@ -40,6 +40,16 @@ class module_Dio:
       FUNC(void, DIO_CODE) DeInitFunction (void);
       FUNC(void, DIO_CODE) GetVersionInfo (void);
       FUNC(void, DIO_CODE) MainFunction   (void);
+
+   private:
+      CONST(Std_TypeVersionInfo, DIO_CONST) VersionInfo = {
+            0x0000
+         ,  0xFFFF
+         ,  0x01
+         ,  '0'
+         ,  '1'
+         ,  '0'
+      };
 };
 
 /******************************************************************************/
