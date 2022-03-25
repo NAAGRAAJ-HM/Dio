@@ -6,11 +6,11 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.h"
-#include "CfgDio.h"
-#include "infDio_EcuM.h"
-#include "infDio_Dcm.h"
-#include "infDio_SchM.h"
+#include "module.hpp"
+#include "CfgDio.hpp"
+#include "infDio_EcuM.hpp"
+#include "infDio_Dcm.hpp"
+#include "infDio_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -90,7 +90,7 @@ FUNC(void, DIO_CODE) module_Dio::GetVersionInfo(void){
 FUNC(void, DIO_CODE) module_Dio::MainFunction(void){
 }
 
-#include "Dio_Unused.h"
+#include "Dio_Unused.hpp"
 
 FUNC(void, DIO_CODE) class_Dio_Unused::ReadChannel(void){
 }
