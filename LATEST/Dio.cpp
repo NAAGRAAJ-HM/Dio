@@ -90,7 +90,16 @@ FUNC(void, DIO_CODE) module_Dio::GetVersionInfo(void){
 FUNC(void, DIO_CODE) module_Dio::MainFunction(void){
 }
 
-#include "Dio_Unused.hpp"
+class class_Dio_Unused{
+   public:
+      FUNC(void, DIO_CODE) ReadChannel       (void);
+      FUNC(void, DIO_CODE) WriteChannel      (void);
+      FUNC(void, DIO_CODE) ReadPort          (void);
+      FUNC(void, DIO_CODE) WritePort         (void);
+      FUNC(void, DIO_CODE) ReadChannelGroup  (void);
+      FUNC(void, DIO_CODE) WriteChannelGroup (void);
+      FUNC(void, DIO_CODE) FlipChannel       (void);
+};
 
 FUNC(void, DIO_CODE) class_Dio_Unused::ReadChannel(void){
 }
