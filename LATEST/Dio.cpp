@@ -7,7 +7,6 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.hpp"
-#include "CfgDio.hpp"
 #include "infDio_EcuM.hpp"
 #include "infDio_Dcm.hpp"
 #include "infDio_SchM.hpp"
@@ -36,37 +35,40 @@ class module_Dio:
       public abstract_module
 {
    public:
+      module_Dio(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
+      }
       FUNC(void, DIO_CODE) InitFunction   (void);
       FUNC(void, DIO_CODE) DeInitFunction (void);
-      FUNC(void, DIO_CODE) GetVersionInfo (void);
       FUNC(void, DIO_CODE) MainFunction   (void);
-
-   private:
-      CONST(Std_TypeVersionInfo, DIO_CONST) VersionInfo = {
-            0x0000
-         ,  0xFFFF
-         ,  0x01
-         ,  '0'
-         ,  '1'
-         ,  '0'
-      };
 };
+
+extern VAR(module_Dio, DIO_VAR) Dio;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
+CONSTP2VAR(infEcuMClient, DIO_VAR, DIO_CONST) gptrinfEcuMClient_Dio = &Dio;
+CONSTP2VAR(infDcmClient,  DIO_VAR, DIO_CONST) gptrinfDcmClient_Dio  = &Dio;
+CONSTP2VAR(infSchMClient, DIO_VAR, DIO_CONST) gptrinfSchMClient_Dio = &Dio;
 
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
+#include "CfgDio.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_Dio, DIO_VAR) Dio;
-CONSTP2VAR(infEcuMClient, DIO_VAR, DIO_CONST) gptrinfEcuMClient_Dio = &Dio;
-CONSTP2VAR(infDcmClient,  DIO_VAR, DIO_CONST) gptrinfDcmClient_Dio  = &Dio;
-CONSTP2VAR(infSchMClient, DIO_VAR, DIO_CONST) gptrinfSchMClient_Dio = &Dio;
+VAR(module_Dio, DIO_VAR) Dio(
+   {
+         0x0000
+      ,  0xFFFF
+      ,  0x01
+      ,  '0'
+      ,  '1'
+      ,  '0'
+   }
+);
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
@@ -77,14 +79,6 @@ FUNC(void, DIO_CODE) module_Dio::InitFunction(void){
 
 FUNC(void, DIO_CODE) module_Dio::DeInitFunction(void){
    Dio.IsInitDone = E_NOT_OK;
-}
-
-FUNC(void, DIO_CODE) module_Dio::GetVersionInfo(void){
-#if(STD_ON == Dio_DevErrorDetect)
-//TBD: API parameter check
-   Det_ReportError(
-   );
-#endif
 }
 
 FUNC(void, DIO_CODE) module_Dio::MainFunction(void){
