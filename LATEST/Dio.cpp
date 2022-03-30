@@ -6,7 +6,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.hpp"
+#include "Module.hpp"
 #include "infDio_EcuM.hpp"
 #include "infDio_Dcm.hpp"
 #include "infDio_SchM.hpp"
@@ -37,6 +37,9 @@ class module_Dio:
    public:
       module_Dio(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
+      FUNC(void, _CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      );
       FUNC(void, DIO_CODE) InitFunction   (void);
       FUNC(void, DIO_CODE) DeInitFunction (void);
       FUNC(void, DIO_CODE) MainFunction   (void);
@@ -73,7 +76,19 @@ VAR(module_Dio, DIO_VAR) Dio(
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, DIO_CODE) module_Dio::InitFunction(void){
+FUNC(void, DIO_CODE) module_Dio::InitFunction(
+   CONSTP2CONST(CfgDio_Type, CFGDIO_CONFIG_DATA, CFGDIO_APPL_CONST) lptrCfgDio
+){
+   if(NULL_PTR == lptrCfgDio){
+#if(STD_ON == Dio_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+// check lptrCfgDio for memory faults
+// use PBcfg_Dio as back-up configuration
+   }
    Dio.IsInitDone = E_OK;
 }
 
