@@ -78,6 +78,7 @@ VAR(module_Dio, DIO_VAR) Dio(
 FUNC(void, DIO_CODE) module_Dio::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, DIO_CONFIG_DATA, DIO_APPL_CONST) lptrCfgModule
 ){
+#if(STD_ON == Dio_InitCheck)
    if(E_OK == IsInitDone){
 #if(STD_ON == Dio_DevErrorDetect)
       Det_ReportError(
@@ -85,6 +86,7 @@ FUNC(void, DIO_CODE) module_Dio::InitFunction(
 #endif
    }
    else{
+#endif
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == Dio_DevErrorDetect)
          Det_ReportError(
@@ -96,10 +98,13 @@ FUNC(void, DIO_CODE) module_Dio::InitFunction(
 // use PBcfg_Dio as back-up configuration
       }
       IsInitDone = E_OK;
+#if(STD_ON == Dio_InitCheck)
    }
+#endif
 }
 
 FUNC(void, DIO_CODE) module_Dio::DeInitFunction(void){
+#if(STD_ON == Dio_InitCheck)
    if(E_OK != IsInitDone){
 #if(STD_ON == Dio_DevErrorDetect)
       Det_ReportError(
@@ -107,11 +112,26 @@ FUNC(void, DIO_CODE) module_Dio::DeInitFunction(void){
 #endif
    }
    else{
+#endif
       IsInitDone = E_NOT_OK;
+#if(STD_ON == Dio_InitCheck)
    }
+#endif
 }
 
 FUNC(void, DIO_CODE) module_Dio::MainFunction(void){
+#if(STD_ON == Dio_InitCheck)
+   if(E_OK != IsInitDone){
+#if(STD_ON == Dio_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+#endif
+#if(STD_ON == Dio_InitCheck)
+   }
+#endif
 }
 
 class class_Dio_Unused{
