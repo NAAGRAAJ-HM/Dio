@@ -14,18 +14,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define DIO_AR_RELEASE_MAJOR_VERSION                                           4
-#define DIO_AR_RELEASE_MINOR_VERSION                                           3
+#define DIO_AR_RELEASE_VERSION_MAJOR                                           4
+#define DIO_AR_RELEASE_VERSION_MINOR                                           3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(DIO_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
-   #error "Incompatible DIO_AR_RELEASE_MAJOR_VERSION!"
+#if(DIO_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible DIO_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(DIO_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
-   #error "Incompatible DIO_AR_RELEASE_MINOR_VERSION!"
+#if(DIO_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible DIO_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -63,8 +63,10 @@ CONSTP2VAR(infSchMClient, DIO_VAR, DIO_CONST) gptrinfSchMClient_Dio = &Dio;
 /******************************************************************************/
 VAR(module_Dio, DIO_VAR) Dio(
    {
-         0x0000
-      ,  0xFFFF
+         DIO_AR_RELEASE_VERSION_MAJOR
+      ,  DIO_AR_RELEASE_VERSION_MINOR
+      ,  0x00
+      ,  0xFF
       ,  0x01
       ,  '0'
       ,  '1'
