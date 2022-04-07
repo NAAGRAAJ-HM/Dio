@@ -101,8 +101,8 @@ FUNC(void, DIO_CODE) module_Dio::InitFunction(
             lptrCfg = lptrCfgModule;
          }
          else{
-// use PBcfg_CanIf as back-up configuration
-            lptrCfg = PBcfg_CanIf;
+// use PBcfgCanIf as back-up configuration
+            lptrCfg = &PBcfgDio;
          }
       }
       IsInitDone = E_OK;
