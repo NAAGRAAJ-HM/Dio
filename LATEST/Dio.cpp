@@ -31,8 +31,20 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
+class class_Dio_Functionality{
+   public:
+      FUNC(void, DIO_CODE) ReadChannel       (void);
+      FUNC(void, DIO_CODE) WriteChannel      (void);
+      FUNC(void, DIO_CODE) ReadPort          (void);
+      FUNC(void, DIO_CODE) WritePort         (void);
+      FUNC(void, DIO_CODE) ReadChannelGroup  (void);
+      FUNC(void, DIO_CODE) WriteChannelGroup (void);
+      FUNC(void, DIO_CODE) FlipChannel       (void);
+};
+
 class module_Dio:
       public abstract_module
+   ,  public class_Dio_Functionality
 {
    public:
       module_Dio(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
@@ -84,6 +96,10 @@ FUNC(void, DIO_CODE) module_Dio::InitFunction(
    if(E_OK == IsInitDone){
 #if(STD_ON == Dio_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -92,6 +108,10 @@ FUNC(void, DIO_CODE) module_Dio::InitFunction(
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == Dio_DevErrorDetect)
          Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
          );
 #endif
       }
@@ -116,6 +136,10 @@ FUNC(void, DIO_CODE) module_Dio::DeInitFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == Dio_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -132,6 +156,10 @@ FUNC(void, DIO_CODE) module_Dio::MainFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == Dio_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -142,36 +170,25 @@ FUNC(void, DIO_CODE) module_Dio::MainFunction(void){
 #endif
 }
 
-class class_Dio_Unused{
-   public:
-      FUNC(void, DIO_CODE) ReadChannel       (void);
-      FUNC(void, DIO_CODE) WriteChannel      (void);
-      FUNC(void, DIO_CODE) ReadPort          (void);
-      FUNC(void, DIO_CODE) WritePort         (void);
-      FUNC(void, DIO_CODE) ReadChannelGroup  (void);
-      FUNC(void, DIO_CODE) WriteChannelGroup (void);
-      FUNC(void, DIO_CODE) FlipChannel       (void);
-};
-
-FUNC(void, DIO_CODE) class_Dio_Unused::ReadChannel(void){
+FUNC(void, DIO_CODE) class_Dio_Functionality::ReadChannel(void){
 }
 
-FUNC(void, DIO_CODE) class_Dio_Unused::WriteChannel(void){
+FUNC(void, DIO_CODE) class_Dio_Functionality::WriteChannel(void){
 }
 
-FUNC(void, DIO_CODE) class_Dio_Unused::ReadPort(void){
+FUNC(void, DIO_CODE) class_Dio_Functionality::ReadPort(void){
 }
 
-FUNC(void, DIO_CODE) class_Dio_Unused::WritePort(void){
+FUNC(void, DIO_CODE) class_Dio_Functionality::WritePort(void){
 }
 
-FUNC(void, DIO_CODE) class_Dio_Unused::ReadChannelGroup(void){
+FUNC(void, DIO_CODE) class_Dio_Functionality::ReadChannelGroup(void){
 }
 
-FUNC(void, DIO_CODE) class_Dio_Unused::WriteChannelGroup(void){
+FUNC(void, DIO_CODE) class_Dio_Functionality::WriteChannelGroup(void){
 }
 
-FUNC(void, DIO_CODE) class_Dio_Unused::FlipChannel(void){
+FUNC(void, DIO_CODE) class_Dio_Functionality::FlipChannel(void){
 }
 
 /******************************************************************************/
