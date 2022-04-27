@@ -31,17 +31,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class class_Dio_Functionality{
-   public:
-      FUNC(void, DIO_CODE) ReadChannel       (void);
-      FUNC(void, DIO_CODE) WriteChannel      (void);
-      FUNC(void, DIO_CODE) ReadPort          (void);
-      FUNC(void, DIO_CODE) WritePort         (void);
-      FUNC(void, DIO_CODE) ReadChannelGroup  (void);
-      FUNC(void, DIO_CODE) WriteChannelGroup (void);
-      FUNC(void, DIO_CODE) FlipChannel       (void);
-};
-
 class module_Dio:
       public abstract_module
    ,  public class_Dio_Functionality
