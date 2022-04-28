@@ -7,10 +7,28 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "CompilerCfg_Dio.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define DIO_COREFUNCTIONALITIES                                                \
+              FUNC(void, DIO_CODE) ReadChannel       (void);                   \
+              FUNC(void, DIO_CODE) WriteChannel      (void);                   \
+              FUNC(void, DIO_CODE) ReadPort          (void);                   \
+              FUNC(void, DIO_CODE) WritePort         (void);                   \
+              FUNC(void, DIO_CODE) ReadChannelGroup  (void);                   \
+              FUNC(void, DIO_CODE) WriteChannelGroup (void);                   \
+              FUNC(void, DIO_CODE) FlipChannel       (void);                   \
+
+#define DIO_COREFUNCTIONALITIES_VIRTUAL                                        \
+      virtual FUNC(void, DIO_CODE) ReadChannel       (void) = 0;               \
+      virtual FUNC(void, DIO_CODE) WriteChannel      (void) = 0;               \
+      virtual FUNC(void, DIO_CODE) ReadPort          (void) = 0;               \
+      virtual FUNC(void, DIO_CODE) WritePort         (void) = 0;               \
+      virtual FUNC(void, DIO_CODE) ReadChannelGroup  (void) = 0;               \
+      virtual FUNC(void, DIO_CODE) WriteChannelGroup (void) = 0;               \
+      virtual FUNC(void, DIO_CODE) FlipChannel       (void) = 0;               \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -21,13 +39,7 @@
 /******************************************************************************/
 class class_Dio_Functionality{
    public:
-      FUNC(void, DIO_CODE) ReadChannel       (void);
-      FUNC(void, DIO_CODE) WriteChannel      (void);
-      FUNC(void, DIO_CODE) ReadPort          (void);
-      FUNC(void, DIO_CODE) WritePort         (void);
-      FUNC(void, DIO_CODE) ReadChannelGroup  (void);
-      FUNC(void, DIO_CODE) WriteChannelGroup (void);
-      FUNC(void, DIO_CODE) FlipChannel       (void);
+      DIO_COREFUNCTIONALITIES_VIRTUAL
 };
 
 /******************************************************************************/
