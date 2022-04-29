@@ -1,34 +1,19 @@
 #pragma once
 /******************************************************************************/
-/* File   : Dio_core.hpp                                                      */
+/* File   : infDio.hpp                                                        */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "CompilerCfg_Dio.hpp"
+#include "infDio_EcuM.hpp"
+#include "infDio_Dcm.hpp"
+#include "infDio_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define DIO_CORE_FUNCTIONALITIES                                               \
-              FUNC(void, DIO_CODE) ReadChannel       (void);                   \
-              FUNC(void, DIO_CODE) WriteChannel      (void);                   \
-              FUNC(void, DIO_CODE) ReadPort          (void);                   \
-              FUNC(void, DIO_CODE) WritePort         (void);                   \
-              FUNC(void, DIO_CODE) ReadChannelGroup  (void);                   \
-              FUNC(void, DIO_CODE) WriteChannelGroup (void);                   \
-              FUNC(void, DIO_CODE) FlipChannel       (void);                   \
-
-#define DIO_CORE_FUNCTIONALITIES_VIRTUAL                                       \
-      virtual FUNC(void, DIO_CODE) ReadChannel       (void) = 0;               \
-      virtual FUNC(void, DIO_CODE) WriteChannel      (void) = 0;               \
-      virtual FUNC(void, DIO_CODE) ReadPort          (void) = 0;               \
-      virtual FUNC(void, DIO_CODE) WritePort         (void) = 0;               \
-      virtual FUNC(void, DIO_CODE) ReadChannelGroup  (void) = 0;               \
-      virtual FUNC(void, DIO_CODE) WriteChannelGroup (void) = 0;               \
-      virtual FUNC(void, DIO_CODE) FlipChannel       (void) = 0;               \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -37,10 +22,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class class_Dio_Functionality{
-   public:
-      DIO_CORE_FUNCTIONALITIES_VIRTUAL
-};
 
 /******************************************************************************/
 /* CONSTS                                                                     */

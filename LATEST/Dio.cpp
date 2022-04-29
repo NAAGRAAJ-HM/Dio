@@ -7,10 +7,9 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "CfgDio.hpp"
 #include "Dio_core.hpp"
-#include "infDio_EcuM.hpp"
-#include "infDio_Dcm.hpp"
-#include "infDio_SchM.hpp"
+#include "infDio.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -44,6 +43,7 @@ class module_Dio:
       );
       FUNC(void, DIO_CODE) DeInitFunction (void);
       FUNC(void, DIO_CODE) MainFunction   (void);
+      DIO_CORE_FUNCTIONALITIES
 };
 
 extern VAR(module_Dio, DIO_VAR) Dio;
@@ -58,7 +58,6 @@ CONSTP2VAR(infSchMClient, DIO_VAR, DIO_CONST) gptrinfSchMClient_Dio = &Dio;
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
-#include "CfgDio.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
