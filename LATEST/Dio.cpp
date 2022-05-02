@@ -159,25 +159,25 @@ FUNC(void, DIO_CODE) module_Dio::MainFunction(void){
 #endif
 }
 
-FUNC(void, DIO_CODE) class_Dio_Functionality::ReadChannel(void){
+FUNC(void, DIO_CODE) module_Dio::ReadChannel(void){
 }
 
-FUNC(void, DIO_CODE) class_Dio_Functionality::WriteChannel(void){
+FUNC(void, DIO_CODE) module_Dio::WriteChannel(void){
 }
 
-FUNC(void, DIO_CODE) class_Dio_Functionality::ReadPort(void){
+FUNC(void, DIO_CODE) module_Dio::ReadPort(void){
 }
 
-FUNC(void, DIO_CODE) class_Dio_Functionality::WritePort(void){
+FUNC(void, DIO_CODE) module_Dio::WritePort(void){
 }
 
-FUNC(void, DIO_CODE) class_Dio_Functionality::ReadChannelGroup(void){
+FUNC(void, DIO_CODE) module_Dio::ReadChannelGroup(void){
 }
 
-FUNC(void, DIO_CODE) class_Dio_Functionality::WriteChannelGroup(void){
+FUNC(void, DIO_CODE) module_Dio::WriteChannelGroup(void){
 }
 
-FUNC(void, DIO_CODE) class_Dio_Functionality::FlipChannel(void){
+FUNC(void, DIO_CODE) module_Dio::FlipChannel(void){
 }
 
 /******************************************************************************/
