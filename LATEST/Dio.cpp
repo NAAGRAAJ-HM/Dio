@@ -113,7 +113,7 @@ FUNC(void, DIO_CODE) module_Dio::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  DIO_E_UNINIT
       );
 #endif
    }
@@ -133,7 +133,7 @@ FUNC(void, DIO_CODE) module_Dio::DeInitFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  DIO_E_UNINIT
       );
 #endif
    }
@@ -152,7 +152,7 @@ FUNC(void, DIO_CODE) module_Dio::MainFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  DIO_E_UNINIT
       );
 #endif
    }
