@@ -89,7 +89,10 @@ FUNC(void, DIO_CODE) module_Dio::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, DIO_CONFIG_DATA, DIO_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == Dio_InitCheck)
-   if(E_OK != IsInitDone){
+   if(
+         E_OK
+      != IsInitDone
+   ){
 #endif
       if(NULL_PTR != lptrCfgModule){
          if(STD_HIGH){
@@ -127,7 +130,10 @@ FUNC(void, DIO_CODE) module_Dio::InitFunction(
 
 FUNC(void, DIO_CODE) module_Dio::DeInitFunction(void){
 #if(STD_ON == Dio_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == Dio_InitCheck)
       IsInitDone = E_NOT_OK;
@@ -147,7 +153,10 @@ FUNC(void, DIO_CODE) module_Dio::DeInitFunction(void){
 
 FUNC(void, DIO_CODE) module_Dio::MainFunction(void){
 #if(STD_ON == Dio_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == Dio_InitCheck)
    }
