@@ -9,7 +9,7 @@
 #include "Module.hpp"
 #include "CfgDio.hpp"
 #include "Dio_core.hpp"
-#include "infDio.hpp"
+#include "infDio_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -32,6 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_Dio:
+   INTERFACES_EXPORTED_DIO
       public abstract_module
    ,  public class_Dio_Functionality
 {
