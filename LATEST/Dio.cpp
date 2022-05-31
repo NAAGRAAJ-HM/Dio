@@ -32,7 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_Dio:
-   INTERFACES_EXPORTED_DIO
+      INTERFACES_EXPORTED_DIO
       public abstract_module
    ,  public class_Dio_Functionality
 {
