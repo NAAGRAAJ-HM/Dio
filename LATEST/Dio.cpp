@@ -10,6 +10,7 @@
 #include "CfgDio.hpp"
 #include "Dio_core.hpp"
 #include "infDio_Exp.hpp"
+#include "infDio_Imp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
