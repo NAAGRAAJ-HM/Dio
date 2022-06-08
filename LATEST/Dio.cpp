@@ -74,7 +74,7 @@ CONSTP2VAR(infSchMClient, DIO_VAR, DIO_CONST) gptrinfSchMClient_Dio = &Dio;
 VAR(module_Dio, DIO_VAR) Dio(
    {
 #if(STD_ON == _ReSIM)
-// char strModuleName[6];
+   char strModuleName[6] = "DIO";
 #else
 #endif
          DIO_AR_RELEASE_VERSION_MAJOR
