@@ -130,7 +130,9 @@ FUNC(void, DIO_CODE) module_Dio::InitFunction(
 #endif
 }
 
-FUNC(void, DIO_CODE) module_Dio::DeInitFunction(void){
+FUNC(void, DIO_CODE) module_Dio::DeInitFunction(
+   void
+){
 #if(STD_ON == Dio_InitCheck)
    if(
          E_OK
@@ -153,7 +155,9 @@ FUNC(void, DIO_CODE) module_Dio::DeInitFunction(void){
 #endif
 }
 
-FUNC(void, DIO_CODE) module_Dio::MainFunction(void){
+FUNC(void, DIO_CODE) module_Dio::MainFunction(
+   void
+){
 #if(STD_ON == Dio_InitCheck)
    if(
          E_OK
@@ -175,25 +179,39 @@ FUNC(void, DIO_CODE) module_Dio::MainFunction(void){
 #endif
 }
 
-FUNC(void, DIO_CODE) module_Dio::ReadChannel(void){
+FUNC(void, DIO_CODE) module_Dio::ReadChannel(
+   void
+){
 }
 
-FUNC(void, DIO_CODE) module_Dio::WriteChannel(void){
+FUNC(void, DIO_CODE) module_Dio::WriteChannel(
+   void
+){
 }
 
-FUNC(void, DIO_CODE) module_Dio::ReadPort(void){
+FUNC(void, DIO_CODE) module_Dio::ReadPort(
+   void
+){
 }
 
-FUNC(void, DIO_CODE) module_Dio::WritePort(void){
+FUNC(void, DIO_CODE) module_Dio::WritePort(
+   void
+){
 }
 
-FUNC(void, DIO_CODE) module_Dio::ReadChannelGroup(void){
+FUNC(void, DIO_CODE) module_Dio::ReadChannelGroup(
+   void
+){
 }
 
-FUNC(void, DIO_CODE) module_Dio::WriteChannelGroup(void){
+FUNC(void, DIO_CODE) module_Dio::WriteChannelGroup(
+   void
+){
 }
 
-FUNC(void, DIO_CODE) module_Dio::FlipChannel(void){
+FUNC(void, DIO_CODE) module_Dio::FlipChannel(
+   void
+){
 }
 
 /******************************************************************************/
