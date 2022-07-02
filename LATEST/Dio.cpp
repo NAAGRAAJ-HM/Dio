@@ -82,12 +82,7 @@ FUNC(void, DIO_CODE) module_Dio::InitFunction(
    ){
 #endif
       if(NULL_PTR != lptrCfgModule){
-         if(STD_HIGH){
-            lptrCfg = lptrCfgModule;
-         }
-         else{
-            lptrCfg = &PBcfgDio;
-         }
+         lptrCfg = lptrCfgModule;
       }
       else{
 #if(STD_ON == Dio_DevErrorDetect)
