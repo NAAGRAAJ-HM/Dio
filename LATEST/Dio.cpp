@@ -7,9 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
-#include "CfgDio.hpp"
-#include "Dio_core.hpp"
-#include "infDio_Exp.hpp"
+#include "Dio.hpp"
 #include "infDio_Imp.hpp"
 
 /******************************************************************************/
@@ -32,26 +30,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_Dio:
-      INTERFACES_EXPORTED_DIO
-      public abstract_module
-   ,  public class_Dio_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-
-   public:
-      FUNC(void, DIO_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, DIO_CONFIG_DATA, DIO_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, DIO_CODE) DeInitFunction (void);
-      FUNC(void, DIO_CODE) MainFunction   (void);
-      DIO_CORE_FUNCTIONALITIES
-};
-
-extern VAR(module_Dio, DIO_VAR) Dio;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
