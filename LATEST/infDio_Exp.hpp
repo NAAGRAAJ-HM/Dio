@@ -8,9 +8,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "infDio_EcuM.hpp"
-#include "infDio_Dcm.hpp"
 #include "infDio_Det.hpp"
-#include "infDio_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
