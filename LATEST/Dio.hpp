@@ -7,6 +7,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "ConstDio.hpp"
 #include "CfgDio.hpp"
 #include "Dio_core.hpp"
 #include "infDio_Exp.hpp"
@@ -31,13 +32,15 @@ class module_Dio:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
+      const ConstDio_Type* lptrConst = (ConstDio_Type*)NULL_PTR;
 
    public:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, DIO_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, DIO_CONFIG_DATA, DIO_APPL_CONST) lptrCfgModule
+            CONSTP2CONST(ConstModule_TypeAbstract, DIO_CONST,       DIO_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   DIO_CONFIG_DATA, DIO_APPL_CONST) lptrCfgModule
       );
       FUNC(void, DIO_CODE) DeInitFunction (void);
       FUNC(void, DIO_CODE) MainFunction   (void);

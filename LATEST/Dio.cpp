@@ -48,7 +48,8 @@ VAR(module_Dio, DIO_VAR) Dio;
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, DIO_CODE) module_Dio::InitFunction(
-   CONSTP2CONST(CfgModule_TypeAbstract, DIO_CONFIG_DATA, DIO_APPL_CONST) lptrCfgModule
+      CONSTP2CONST(ConstModule_TypeAbstract, DIO_CONST,       DIO_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   DIO_CONFIG_DATA, DIO_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == Dio_InitCheck)
    if(
@@ -56,8 +57,12 @@ FUNC(void, DIO_CODE) module_Dio::InitFunction(
       != IsInitDone
    ){
 #endif
-      if(NULL_PTR != lptrCfgModule){
-         lptrCfg = lptrCfgModule;
+      if(
+            (NULL_PTR != lptrConstModule)
+         && (NULL_PTR != lptrCfgModule)
+      ){
+         lptrConst = lptrConstModule;
+         lptrCfg   = lptrCfgModule;
       }
       else{
 #if(STD_ON == Dio_DevErrorDetect)
