@@ -61,7 +61,7 @@ FUNC(void, DIO_CODE) module_Dio::InitFunction(
             (NULL_PTR != lptrConstModule)
          && (NULL_PTR != lptrCfgModule)
       ){
-         lptrConst = lptrConstModule;
+         lptrConst = (const ConstDio_Type*)lptrConstModule;
          lptrCfg   = lptrCfgModule;
       }
       else{
