@@ -1,20 +1,34 @@
 #pragma once
 /******************************************************************************/
-/* File   : McalDio.hpp                                                           */
+/* File   : McalDio_core.hpp                                                      */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstMcalDio.hpp"
-#include "CfgMcalDio.hpp"
-#include "McalDio_core.hpp"
-#include "infMcalDio_Exp.hpp"
+#include "CompilerCfg_McalDio.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define DIO_CORE_FUNCTIONALITIES                                               \
+              FUNC(void, DIO_CODE) ReadChannel       (void);                   \
+              FUNC(void, DIO_CODE) WriteChannel      (void);                   \
+              FUNC(void, DIO_CODE) ReadMcalPort          (void);                   \
+              FUNC(void, DIO_CODE) WriteMcalPort         (void);                   \
+              FUNC(void, DIO_CODE) ReadChannelGroup  (void);                   \
+              FUNC(void, DIO_CODE) WriteChannelGroup (void);                   \
+              FUNC(void, DIO_CODE) FlipChannel       (void);                   \
+
+#define DIO_CORE_FUNCTIONALITIES_VIRTUAL                                       \
+      virtual FUNC(void, DIO_CODE) ReadChannel       (void) = 0;               \
+      virtual FUNC(void, DIO_CODE) WriteChannel      (void) = 0;               \
+      virtual FUNC(void, DIO_CODE) ReadMcalPort          (void) = 0;               \
+      virtual FUNC(void, DIO_CODE) WriteMcalPort         (void) = 0;               \
+      virtual FUNC(void, DIO_CODE) ReadChannelGroup  (void) = 0;               \
+      virtual FUNC(void, DIO_CODE) WriteChannelGroup (void) = 0;               \
+      virtual FUNC(void, DIO_CODE) FlipChannel       (void) = 0;               \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -23,28 +37,9 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_McalDio:
-      INTERFACES_EXMCALPORTED_MCALDIO
-      public abstract_module
-   ,  public class_McalDio_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-      const ConstMcalDio_Type* lptrConst = (ConstMcalDio_Type*)NULL_PTR;
-
+class class_McalDio_Functionality{
    public:
-/******************************************************************************/
-/* FUNCTIONS                                                                  */
-/******************************************************************************/
-      FUNC(void, MCALDIO_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, MCALDIO_CONST,       MCALDIO_APPL_CONST) lptrConstModule
-         ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALDIO_CONFIG_DATA, MCALDIO_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, MCALDIO_CODE) DeInitFunction (void);
-      FUNC(void, MCALDIO_CODE) MainFunction   (void);
-      MCALDIO_CORE_FUNCTIONALITIES
+      DIO_CORE_FUNCTIONALITIES_VIRTUAL
 };
 
 /******************************************************************************/
@@ -58,7 +53,10 @@ class module_McalDio:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern VAR(module_McalDio, MCALDIO_VAR) McalDio;
+
+/******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
 
 /******************************************************************************/
 /* EOF                                                                        */

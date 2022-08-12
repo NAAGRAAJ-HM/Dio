@@ -24,7 +24,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_McalDio:
-      INTERFACES_EXPORTED_DIO
+      INTERFACES_EXPORTED_MCALDIO
       public abstract_module
    ,  public class_McalDio_Functionality
 {
@@ -38,13 +38,13 @@ class module_McalDio:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-      FUNC(void, DIO_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, DIO_CONST,       DIO_APPL_CONST) lptrConstModule
-         ,  CONSTP2CONST(CfgModule_TypeAbstract,   DIO_CONFIG_DATA, DIO_APPL_CONST) lptrCfgModule
+      FUNC(void, MCALDIO_CODE) InitFunction(
+            CONSTP2CONST(ConstModule_TypeAbstract, MCALDIO_CONST,       MCALDIO_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALDIO_CONFIG_DATA, MCALDIO_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, DIO_CODE) DeInitFunction (void);
-      FUNC(void, DIO_CODE) MainFunction   (void);
-      DIO_CORE_FUNCTIONALITIES
+      FUNC(void, MCALDIO_CODE) DeInitFunction (void);
+      FUNC(void, MCALDIO_CODE) MainFunction   (void);
+      MCALDIO_CORE_FUNCTIONALITIES
 };
 
 /******************************************************************************/
@@ -58,7 +58,7 @@ class module_McalDio:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern VAR(module_McalDio, DIO_VAR) McalDio;
+extern VAR(module_McalDio, MCALDIO_VAR) McalDio;
 
 /******************************************************************************/
 /* EOF                                                                        */
