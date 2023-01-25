@@ -1,13 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : McalDio.hpp                                                           */
+/* File   : McalDio.hpp                                                       */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstMcalDio.hpp"
+#include "infMcalDio_ServiceNvM_Types.hpp"
 #include "CfgMcalDio.hpp"
 #include "McalDio_core.hpp"
 #include "infMcalDio_Exp.hpp"
