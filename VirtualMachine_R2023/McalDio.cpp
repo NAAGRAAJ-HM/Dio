@@ -9,7 +9,8 @@
 #include "Std_Types.hpp"
 
 #include "McalDio.hpp"
-#include "infMcalDio_ServiceSwcEcuM.hpp"
+
+#include "infMcalDioServiceSwcEcuM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -38,9 +39,9 @@
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, MCALDIO_CODE) McalDio_InitFunction   (void){}
-FUNC(void, MCALDIO_CODE) McalDio_DeInitFunction (void){}
-FUNC(void, MCALDIO_CODE) McalDio_MainFunction   (void){}
+FUNC(void, MCALDIO_CODE) infMcalDioServiceSwcEcuM_InitFunction   (void){}
+FUNC(void, MCALDIO_CODE) infMcalDioServiceSwcEcuM_DeInitFunction (void){}
+FUNC(void, MCALDIO_CODE) infMcalDioServiceSwcSchM_MainFunction   (void){}
 
 /******************************************************************************/
 /* EOF                                                                        */
