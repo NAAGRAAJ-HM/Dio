@@ -1,6 +1,6 @@
 #pragma once
 /******************************************************************************/
-/* File   : infMcalDioSwcApplEcuM.h                                           */
+/* File   : Types_McalDio.h                                                   */
 /*                                                                            */
 /* Author : Raajnaag HULIYAPURADA MATA                                        */
 /*                                                                            */
@@ -24,7 +24,6 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "CompilerCfg_McalDio.h"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -37,6 +36,44 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
+typedef enum{
+      GPIO_LED1
+   ,  GPIO_LCD_E
+	,  GPIO_LCD_RW
+	,  GPIO_LCD_RS
+   ,  GPIO_RES_OUT
+   ,  GPIO_DIN
+   ,  GPIO_SELDP0
+   ,  GPIO_SELDP1
+   ,  GPIO_SELDP2
+   ,  GPIO_INTP
+   ,  GPIO_EN_TJA
+   ,  GPIO_ERR_TJA
+   ,  GPIO_STB_TJA
+   ,  GPIO_CS_ATA
+   ,  GPIO_SPI_MOSI
+   ,  GPIO_SPI_CLK
+   ,  GPIO_SPI_MISO
+	,  GPIO_CHK_FREQ
+   ,  GPIO_PWR_ATA
+   ,  GPIO_PWR_B1ATA
+   ,  GPIO_PWR_B2ATA
+   ,  GPIO_IRQ_ATA
+   ,  GPIO_TP0
+   ,  GPIO_TP1
+   ,  GPIO_TP2
+   ,  GPIO_TP3
+}Type_McalDio_eName;
+
+typedef struct{
+                  Type_McalDio_eName Name;
+                  uint16             PinNumber;
+   volatile       uint16*            PMC_Reg;
+   volatile       uint16*            PM_Reg;
+   volatile const uint16*            PPR_Reg;
+   volatile       uint16*            PIBC_Reg;
+   volatile       uint16*            P_Reg;
+}Type_McalDio_stPin;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
@@ -53,7 +90,6 @@
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-extern FUNC(void, MCALDIO_CODE) infMcalDioSwcApplEcuM_vInitFunction(void);
 
 /******************************************************************************/
 /* EOF                                                                        */
