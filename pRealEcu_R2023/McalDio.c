@@ -29,7 +29,7 @@
 #include "infMcalDioSwcApplEcuM.h"
 
 #include "uC_Dio.h"
-#include "CfgSwcServiceOs.h"
+#include "Types_SwcServiceOs.h"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
