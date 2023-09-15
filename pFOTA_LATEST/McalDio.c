@@ -5,16 +5,16 @@ extern "C"
 
 #include "McalDio.hpp"
 
-enum AGPIO_Name {   AGPIO_AP0,
-										AGPIO_AP1,
-										AGPIO_AP2,
-										AGPIO_AP3,
-										AGPIO_AP4,
-										AGPIO_AP5,
-										AGPIO_AP6,
-										AGPIO_AP7,
-										AGPIO_AP8,
-										AGPIO_AP9
+enum AGPIO_Name {   AGPIO_AP0
+   ,  									AGPIO_AP1
+   ,  									AGPIO_AP2
+   ,  									AGPIO_AP3
+   ,  									AGPIO_AP4
+   ,  									AGPIO_AP5
+   ,  									AGPIO_AP6
+   ,  									AGPIO_AP7
+   ,  									AGPIO_AP8
+   ,  									AGPIO_AP9
                                 };
 
 struct GPIO_pin {
@@ -72,35 +72,35 @@ static void GPIO_init_TJA_ERR_Pin(void);
 #include "version.hpp"
 
 static const struct GPIO_pin GPIO_List [] = {
-   {GPIO_LED1      ,3u,&PMC10,&PM10,&PPR10,&PIBC10,&P10},
-   {GPIO_LCD_E     ,6u,&PMC8 ,&PM8 ,&PPR8, &PIBC8, &P8},
-   {GPIO_LCD_RW    ,5u,&PMC8 ,&PM8 ,&PPR8, &PIBC8, &P8},
-   {GPIO_LCD_RS    ,4u,&PMC8 ,&PM8 ,&PPR8, &PIBC8, &P8},
-   {GPIO_RES_OUT   ,0u,&PMC0 ,&PM0 ,&PPR0, &PIBC0, &P0},
-   {GPIO_DIN       ,1u,&PMC8 ,&PM8 ,&PPR8, &PIBC8, &P8},
-   {GPIO_SELDP0    ,4u,&PMC0 ,&PM0 ,&PPR0, &PIBC0, &P0},
-   {GPIO_SELDP1    ,5u,&PMC0 ,&PM0 ,&PPR0, &PIBC0, &P0},
-   {GPIO_SELDP2    ,6u,&PMC0 ,&PM0 ,&PPR0, &PIBC0, &P0},
-   {GPIO_INTP      ,9u,&PMC0 ,&PM0 ,&PPR0, &PIBC0, &P0},
-   {GPIO_EN_TJA    ,1u,&PMC0 ,&PM0 ,&PPR0, &PIBC0, &P0 },
-   {GPIO_ERR_TJA   ,2u,&PMC0 ,&PM0 ,&PPR0, &PIBC0, &P0 },
-   {GPIO_STB_TJA   ,3u,&PMC10,&PM10,&PPR10,&PIBC10,&P10},
-   {GPIO_CS_ATA    ,5u,&PMC10,&PM10,&PPR10,&PIBC10,&P10},
-   {GPIO_SPI_MOSI  ,6u,&PMC10,&PM10,&PPR10,&PIBC10,&P10},
-   {GPIO_SPI_CLK   ,7u,&PMC10,&PM10,&PPR10,&PIBC10,&P10},
-   {GPIO_SPI_MISO  ,8u,&PMC10,&PM10,&PPR10,&PIBC10,&P10},
-   {GPIO_CHK_FREQ  ,9u,&PMC10,&PM10,&PPR10,&PIBC10,&P10},
-   {GPIO_PWR_ATA   ,14u,&PMC10,&PM10,&PPR10,&PIBC10,&P10},
-   {GPIO_PWR_B1ATA ,13u,&PMC10,&PM10,&PPR10,&PIBC10,&P10},
-   {GPIO_PWR_B2ATA ,12u,&PMC10,&PM10,&PPR10,&PIBC10,&P10},
-   {GPIO_IRQ_ATA   ,11u,&PMC10,&PM10,&PPR10,&PIBC10,&P10},
-   {GPIO_TP0       ,0u ,&PMC9, &PM9 ,&PPR9, &PIBC9, &P9},
-   {GPIO_TP1       ,1u ,&PMC9, &PM9 ,&PPR9, &PIBC9, &P9},
-   {GPIO_TP2       ,2u ,&PMC9, &PM9 ,&PPR9, &PIBC9, &P9},
-   {GPIO_TP3       ,3u ,&PMC9, &PM9 ,&PPR9, &PIBC9, &P9}
+   {GPIO_LED1      ,3u,&PMC10,&PM10,&PPR10,&PIBC10,&P10}
+   ,  {GPIO_LCD_E     ,6u,&PMC8 ,&PM8 ,&PPR8, &PIBC8, &P8}
+   ,  {GPIO_LCD_RW    ,5u,&PMC8 ,&PM8 ,&PPR8, &PIBC8, &P8}
+   ,  {GPIO_LCD_RS    ,4u,&PMC8 ,&PM8 ,&PPR8, &PIBC8, &P8}
+   ,  {GPIO_RES_OUT   ,0u,&PMC0 ,&PM0 ,&PPR0, &PIBC0, &P0}
+   ,  {GPIO_DIN       ,1u,&PMC8 ,&PM8 ,&PPR8, &PIBC8, &P8}
+   ,  {GPIO_SELDP0    ,4u,&PMC0 ,&PM0 ,&PPR0, &PIBC0, &P0}
+   ,  {GPIO_SELDP1    ,5u,&PMC0 ,&PM0 ,&PPR0, &PIBC0, &P0}
+   ,  {GPIO_SELDP2    ,6u,&PMC0 ,&PM0 ,&PPR0, &PIBC0, &P0}
+   ,  {GPIO_INTP      ,9u,&PMC0 ,&PM0 ,&PPR0, &PIBC0, &P0}
+   ,  {GPIO_EN_TJA    ,1u,&PMC0 ,&PM0 ,&PPR0, &PIBC0, &P0 }
+   ,  {GPIO_ERR_TJA   ,2u,&PMC0 ,&PM0 ,&PPR0, &PIBC0, &P0 }
+   ,  {GPIO_STB_TJA   ,3u,&PMC10,&PM10,&PPR10,&PIBC10,&P10}
+   ,  {GPIO_CS_ATA    ,5u,&PMC10,&PM10,&PPR10,&PIBC10,&P10}
+   ,  {GPIO_SPI_MOSI  ,6u,&PMC10,&PM10,&PPR10,&PIBC10,&P10}
+   ,  {GPIO_SPI_CLK   ,7u,&PMC10,&PM10,&PPR10,&PIBC10,&P10}
+   ,  {GPIO_SPI_MISO  ,8u,&PMC10,&PM10,&PPR10,&PIBC10,&P10}
+   ,  {GPIO_CHK_FREQ  ,9u,&PMC10,&PM10,&PPR10,&PIBC10,&P10}
+   ,  {GPIO_PWR_ATA   ,14u,&PMC10,&PM10,&PPR10,&PIBC10,&P10}
+   ,  {GPIO_PWR_B1ATA ,13u,&PMC10,&PM10,&PPR10,&PIBC10,&P10}
+   ,  {GPIO_PWR_B2ATA ,12u,&PMC10,&PM10,&PPR10,&PIBC10,&P10}
+   ,  {GPIO_IRQ_ATA   ,11u,&PMC10,&PM10,&PPR10,&PIBC10,&P10}
+   ,  {GPIO_TP0       ,0u ,&PMC9, &PM9 ,&PPR9, &PIBC9, &P9}
+   ,  {GPIO_TP1       ,1u ,&PMC9, &PM9 ,&PPR9, &PIBC9, &P9}
+   ,  {GPIO_TP2       ,2u ,&PMC9, &PM9 ,&PPR9, &PIBC9, &P9}
+   ,  {GPIO_TP3       ,3u ,&PMC9, &PM9 ,&PPR9, &PIBC9, &P9}
 };
 
-void GPIO_CanEnable(uint8 ucEn){
+void McalDio_CanEnable(uint8 ucEn){
   if(ucEn == 0){
     P0 &= ~(1u<<1);
   }
@@ -109,7 +109,7 @@ void GPIO_CanEnable(uint8 ucEn){
   }
 }
 
-void GPIO_CanStandby(uint8 ucStb){
+void McalDio_CanStandby(uint8 ucStb){
   if(ucStb == 1){
     P10 &= ~(1u<<3);
   }
@@ -118,8 +118,8 @@ void GPIO_CanStandby(uint8 ucStb){
   }
 }
 
-void GPIO_Init(void){
-  #ifdef DEBUG_PORTS_ACTIVE
+void McalDio_InitFunction(void){
+#ifdef DEBUG_PORTS_ACTIVE
 
   GPIO_init_output(GPIO_TP0);
   GPIO_init_output(GPIO_TP1);
@@ -127,22 +127,22 @@ void GPIO_Init(void){
   GPIO_init_output(GPIO_TP3);
   TP3(1);
   TP0(0);
-  #else
+#else
   GPIO_init_input(GPIO_TP0);
   GPIO_init_input(GPIO_TP1);
   GPIO_init_input(GPIO_TP2);
   GPIO_init_input(GPIO_TP3);
-  #endif
+#endif
 
   GPIO_init_RF_Freq_Pin();
   GPIO_init_TJA_ERR_Pin();
   GPIO_init_output(GPIO_STB_TJA);
   GPIO_init_output(GPIO_EN_TJA);
-  GPIO_output_off(GPIO_STB_TJA);
-  GPIO_output_off(GPIO_EN_TJA);
+  McalDio_output_off(GPIO_STB_TJA);
+  McalDio_output_off(GPIO_EN_TJA);
 }
 
-void GPIO_CanInit(void){
+void McalDio_CanInitFunction(void){
   PMC0 &= ~(1u<<1);
   PM0 &= ~(1u<<1);
   P0 &= ~(1u<<1);
@@ -165,10 +165,10 @@ void GPIO_CanInit(void){
   PMC10   |= 0x0002U;
 }
 
-uint8 GPIO_GetFrequencySetting(void){
+uint8 McalDio_GetFrequencySetting(void){
   uint8 ucRet;
 
-  if(GPIO_input_read(GPIO_CHK_FREQ) == TRUE){
+  if(McalDio_input_read(GPIO_CHK_FREQ) == TRUE){
     ucRet = cFREQUENCY_433;
   }
   else{
@@ -203,15 +203,15 @@ static void GPIO_init_TJA_ERR_Pin(void){
 		PU0 |= (1 << 2);
 }
 
-uint16 GPIO_input_read(enum GPIO_Name PortPin){
+uint16 McalDio_input_read(enum GPIO_Name PortPin){
   return (((*GPIO_List[PortPin].PPR_Reg) >> GPIO_List[PortPin].PinNumber)& 0x0001);
 }
 
-void GPIO_output_off(enum GPIO_Name PortPin){
+void McalDio_output_off(enum GPIO_Name PortPin){
     *GPIO_List[PortPin].P_Reg &= ~(1u << GPIO_List[PortPin].PinNumber);
 }
 
-void GPIO_output_on(enum GPIO_Name PortPin){
+void McalDio_output_on(enum GPIO_Name PortPin){
     *GPIO_List[PortPin].P_Reg |= (1u << GPIO_List[PortPin].PinNumber);
 }
 

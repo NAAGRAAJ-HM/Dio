@@ -23,13 +23,13 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "Std_Types.h"
+#include "Std_Types.hpp"
 
-#include "CfgMcalDio.h"
-#include "infMcalDioSwcApplEcuM.h"
+#include "CfgMcalDio.hpp"
+#include "infMcalDioSwcApplEcuM.hpp"
 
-#include "uC_Dio.h"
-#include "Types_SwcServiceOs.h"
+#include "uC_Dio.hpp"
+#include "Types_SwcServiceOs.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */

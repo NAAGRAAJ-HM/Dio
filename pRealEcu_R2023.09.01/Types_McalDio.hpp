@@ -39,8 +39,8 @@
 typedef enum{
       GPIO_LED1
    ,  GPIO_LCD_E
-	,  GPIO_LCD_RW
-	,  GPIO_LCD_RS
+   ,  GPIO_LCD_RW
+   ,  GPIO_LCD_RS
    ,  GPIO_RES_OUT
    ,  GPIO_DIN
    ,  GPIO_SELDP0
@@ -54,7 +54,7 @@ typedef enum{
    ,  GPIO_SPI_MOSI
    ,  GPIO_SPI_CLK
    ,  GPIO_SPI_MISO
-	,  GPIO_CHK_FREQ
+   ,  GPIO_CHK_FREQ
    ,  GPIO_PWR_ATA
    ,  GPIO_PWR_B1ATA
    ,  GPIO_PWR_B2ATA
