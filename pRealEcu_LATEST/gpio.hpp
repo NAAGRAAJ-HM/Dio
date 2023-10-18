@@ -3,34 +3,12 @@
 
 #include "gpioX.hpp"
 
-enum AGPIO_Name{
-      AGPIO_AP0
-   ,  AGPIO_AP1
-   ,  AGPIO_AP2
-   ,  AGPIO_AP3
-   ,  AGPIO_AP4
-   ,  AGPIO_AP5
-   ,  AGPIO_AP6
-   ,  AGPIO_AP7
-   ,  AGPIO_AP8
-   ,  AGPIO_AP9
-};
-
-struct AGPIO_pin{
-                  enum AGPIO_Name Name;
-                  uint16  PinNumber;
-   volatile       uint16* APM_Reg;
-   volatile const uint16* APPR_Reg;
-   volatile       uint16* APIBC_Reg;
-   volatile       uint16* AP_Reg;
-};
-
 void  PWR_ATA_P10_14_on    (void);
 void  PWR_ATA_P10_14_off   (void);
 void  PWR_ATA              (uint8 ucSet);
 void  SPI_CLK              (uint8 ucSet);
 void  SPI_MOSI             (uint8 ucSet);
-void  AMcalDio_vInitOutput (enum AGPIO_Name PortPin);
+void  AMcalDio_vInitOutput (Type_CfgMcalDio_ePinNames PortPin);
 void  ClearKplAPort        (void);
 void  APort0               (uint8 ucSet);
 void  APort1               (uint8 ucSet);
