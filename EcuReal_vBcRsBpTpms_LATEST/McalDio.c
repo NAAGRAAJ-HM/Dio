@@ -54,8 +54,7 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-#if(CfgProject_dSwitchReSim != STD_ON)
-#else
+#ifdef CfgProject_dSwitchReSim
 volatile       uint16 P0;
 volatile       uint16 P8;
 volatile       uint16 P9;
