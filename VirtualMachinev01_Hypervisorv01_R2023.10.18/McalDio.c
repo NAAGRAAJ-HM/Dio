@@ -1,7 +1,7 @@
 /******************************************************************************/
 /* File   : McalDio.c                                                         */
 /*                                                                            */
-/* Author : Raajnaag HULIYAPURADA MATA                                        */
+/* Author : Nagaraja HULIYAPURADA MATA                                        */
 /*                                                                            */
 /* License / Warranty / Terms and Conditions                                  */
 /*                                                                            */
@@ -13,7 +13,7 @@
 /* certain responsibilities, if you distribute copies of the software, or if  */
 /* you modify it: responsibilities to respect the freedom of others.          */
 /*                                                                            */
-/* All rights reserved. Copyright © 1982 Raajnaag HULIYAPURADA MATA           */
+/* All rights reserved. Copyright © 1982 Nagaraja HULIYAPURADA MATA           */
 /*                                                                            */
 /* Always refer latest software version from:                                 */
 /* https://github.com/RaajnaagHuliyapuradaMata?tab=repositories               */
@@ -54,7 +54,7 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-#ifndef ReSim
+#if(CfgProject_dSwitchReSim != STD_ON)
 #else
 volatile       uint16 P0;
 volatile       uint16 P8;
@@ -90,7 +90,7 @@ volatile       uint8  FCLA0CTL3_INTPH;
 /******************************************************************************/
 //static void McalDio_vInitInput(Type_McalDio_eName leNamePin){
          void McalDio_vInitInput(Type_McalDio_eName leNamePin){ //TBD: Remove
-   const Type_McalDio_stPin* lptrstPin = &CfgMcalDio_castListPins[leNamePin];
+   const Type_McalDio_stPin* lptrstPin = &CfgMcalDio_castListInfoPins[leNamePin];
          uint16              lu16Mask  = 1u << lptrstPin->PinNumber;
 
   *lptrstPin->PM_Reg   |=  lu16Mask;
@@ -100,7 +100,7 @@ volatile       uint8  FCLA0CTL3_INTPH;
 
 //static void McalDio_vInitOutput(Type_McalDio_eName leNamePin){
          void McalDio_vInitOutput(Type_McalDio_eName leNamePin){ //TBD: Remove
-   const Type_McalDio_stPin* lptrstPin = &CfgMcalDio_castListPins[leNamePin];
+   const Type_McalDio_stPin* lptrstPin = &CfgMcalDio_castListInfoPins[leNamePin];
          uint16              lu16Mask  = 1u << lptrstPin->PinNumber;
 
   *lptrstPin->P_Reg   &= ~lu16Mask;
@@ -109,7 +109,7 @@ volatile       uint8  FCLA0CTL3_INTPH;
 }
 
 void McalDio_vInitOutputOff(Type_McalDio_eName leNamePin){
-  *CfgMcalDio_castListPins[leNamePin].P_Reg &= ~(1u << CfgMcalDio_castListPins[leNamePin].PinNumber);
+  *CfgMcalDio_castListInfoPins[leNamePin].P_Reg &= ~(1u << CfgMcalDio_castListInfoPins[leNamePin].PinNumber);
 }
 
 static void McalDio_vInitPinErrTja(void){

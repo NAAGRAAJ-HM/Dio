@@ -1,8 +1,8 @@
 #pragma once
 /******************************************************************************/
-/* File   : Types_McalDio.h                                                   */
+/* File   : Types_McalDio.hpp                                                 */
 /*                                                                            */
-/* Author : Raajnaag HULIYAPURADA MATA                                        */
+/* Author : Nagaraja HULIYAPURADA MATA                                        */
 /*                                                                            */
 /* License / Warranty / Terms and Conditions                                  */
 /*                                                                            */
@@ -14,7 +14,7 @@
 /* certain responsibilities, if you distribute copies of the software, or if  */
 /* you modify it: responsibilities to respect the freedom of others.          */
 /*                                                                            */
-/* All rights reserved. Copyright © 1982 Raajnaag HULIYAPURADA MATA           */
+/* All rights reserved. Copyright © 1982 Nagaraja HULIYAPURADA MATA           */
 /*                                                                            */
 /* Always refer latest software version from:                                 */
 /* https://github.com/RaajnaagHuliyapuradaMata?tab=repositories               */
@@ -36,6 +36,19 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
+typedef enum{
+      CfgMcalDio_ePinName_AP0
+   ,  CfgMcalDio_ePinName_AP1
+   ,  CfgMcalDio_ePinName_AP2
+   ,  CfgMcalDio_ePinName_AP3
+   ,  CfgMcalDio_ePinName_AP4
+   ,  CfgMcalDio_ePinName_AP5
+   ,  CfgMcalDio_ePinName_AP6
+   ,  CfgMcalDio_ePinName_AP7
+   ,  CfgMcalDio_ePinName_AP8
+   ,  CfgMcalDio_ePinName_AP9
+}Type_CfgMcalDio_ePinNames;
+
 typedef enum{
       GPIO_LED1
    ,  GPIO_LCD_E
@@ -73,11 +86,22 @@ typedef struct{
    volatile const uint16*            PPR_Reg;
    volatile       uint16*            PIBC_Reg;
    volatile       uint16*            P_Reg;
-}Type_McalDio_stPin;
+}Type_McalDio_stPin; //TBD: correct naming convention
+
+typedef struct{
+                  Type_CfgMcalDio_ePinNames ePinName;
+                  uint16                    PinNumber;
+   volatile       uint16*                   APM_Reg;
+   volatile const uint16*                   APPR_Reg;
+   volatile       uint16*                   APIBC_Reg;
+   volatile       uint16*                   AP_Reg;
+}Type_CfgMcalDio_stInfoPin; //TBD: correct naming convention
 
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
+extern CONST(Type_McalDio_stPin, MCALDIO_CONFIG_DATA) CfgMcalDio_castListInfoPins[]; //TBD: correct naming convention
+extern const Type_CfgMcalDio_stInfoPin                ACfgMcalDio_castListPins[];    //TBD: correct naming convention
 
 /******************************************************************************/
 /* PARAMS                                                                     */
